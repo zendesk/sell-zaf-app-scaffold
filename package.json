@@ -1,0 +1,98 @@
+{
+  "name": "@zendesk/zaf-react-app-scaffold-for-sell",
+  "version": "0.0.1",
+  "description": "A React scaffold for developers to build Zendesk App Framework (ZAF) apps for Sell",
+  "main": "./dist/main.js",
+  "scripts": {
+    "start": "webpack -w --env development",
+    "build": "NODE_ENV=production webpack -p && npm run validate && zat package --path ./dist && echo \"Package is ready to upload to Zendesk\"",
+    "test": "jest --env=jsdom",
+    "server": "zat server --path ./dist",
+    "validate": "zat validate --path ./dist",
+    "lint": "tslint --project tsconfig.json --fix",
+    "prettier": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zendesk/zaf-react-app-scaffold-for-sell.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/zendesk/zaf-react-app-scaffold-for-sell/issues"
+  },
+  "homepage": "https://github.com/zendesk/zaf-react-app-scaffold-for-sell#readme",
+  "dependencies": {
+    "@zendesk/zaf-app-utils-for-sell": "github:zendesk/zaf-app-utils-for-sell#v0.0.17",
+    "@zendeskgarden/css-variables": "^6.4.0",
+    "@zendeskgarden/react-loaders": "^6.8.0",
+    "@zendeskgarden/react-theming": "^6.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^4.2.0",
+    "@types/enzyme": "^3.9.1",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.2",
+    "autoprefixer": "^9.5.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.7.1",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-origin-ordered-imports-rule": "^1.2.2",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
+    "tslint-react-hooks": "^2.1.0",
+    "typed-css-modules-loader": "0.0.17",
+    "typescript": "^3.4.5",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "jest": {
+    "verbose": false,
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "globals": {
+      "API_URL": "idealwith",
+      "DEVELOPMENT": false
+    },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/**/?(*.)(spec|test).ts?(x)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@zendeskgarden)/)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
+}

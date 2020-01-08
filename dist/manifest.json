@@ -1,0 +1,32 @@
+{
+  "name": "ZAF React Skeleton App",
+  "author": {
+    "name": "Zendesk",
+    "email": "support@zendesk.com",
+    "url": "https://www.zendesk.com"
+  },
+
+  "defaultLocale": "en",
+  "private": false,
+  "singleInstall": true,
+
+  "location": {
+    "sell": {
+      "lead_card": {
+        "url": "assets/index.html"
+      },
+      "person_card": {
+        "url": "assets/index.html"
+      },
+      "company_card": {
+        "url": "assets/index.html"
+      },
+      "deal_card": {
+        "url": "assets/index.html"
+      }
+    }
+  },
+
+  "version": "2.0.3",
+  "frameworkVersion": "2.0"
+}

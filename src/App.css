@@ -1,0 +1,45 @@
+@import '@zendeskgarden/css-variables';
+
+:global(html),
+:global(body) {
+  height: 100%;
+  overflow: auto;
+}
+
+:global(#app) {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  color: var(--zd-color-grey-800);
+  font-family: var(--zd-font-family-system);
+  font-size: var(--zd-font-size-md-monospace);
+  font-weight: var(--zd-font-weight-light);
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.header {
+  background-color: var(--zd-color-yellow-400);
+  padding: var(--zd-spacing-sm);
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: var(--zd-color-black);
+}
+
+.dateContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: var(--zd-spacing-sm);
+}
