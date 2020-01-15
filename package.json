@@ -1,5 +1,5 @@
 {
-  "name": "@zendesk/zaf-react-app-scaffold-for-sell",
+  "name": "@zendesk/sell-zaf-app-scaffold",
   "version": "0.0.1",
   "description": "A React scaffold for developers to build Zendesk App Framework (ZAF) apps for Sell",
   "main": "./dist/main.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zendesk/zaf-react-app-scaffold-for-sell.git"
+    "url": "git+https://github.com/zendesk/sell-zaf-app-scaffold.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/zendesk/zaf-react-app-scaffold-for-sell/issues"
+    "url": "https://github.com/zendesk/sell-zaf-app-scaffold/issues"
   },
-  "homepage": "https://github.com/zendesk/zaf-react-app-scaffold-for-sell#readme",
+  "homepage": "https://github.com/zendesk/sell-zaf-app-scaffold#readme",
   "dependencies": {
     "@zendesk/zaf-app-utils-for-sell": "github:zendesk/zaf-app-utils-for-sell#v0.0.17",
     "@zendeskgarden/css-variables": "^6.4.0",
