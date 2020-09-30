@@ -1,1 +1,4 @@
-export const Skeleton: string;
+declare const styles: {
+  readonly Skeleton: string
+}
+export = styles
