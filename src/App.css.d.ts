@@ -1,5 +1,8 @@
-export const App: string;
-export const container: string;
-export const header: string;
-export const title: string;
-export const dateContainer: string;
+declare const styles: {
+  readonly App: string
+  readonly container: string
+  readonly header: string
+  readonly title: string
+  readonly dateContainer: string
+}
+export = styles

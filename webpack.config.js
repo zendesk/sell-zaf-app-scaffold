@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 const {WatchIgnorePlugin} = require('webpack')
 
@@ -48,8 +48,8 @@ module.exports = (env = []) => {
               options: {
                 modules: {
                   localIdentName: '[hash:base64:3]--[name]--[local]',
+                  exportLocalsConvention: 'camelCase',
                 },
-                localsConvention: 'camelCase',
               },
             },
             {
@@ -61,28 +61,23 @@ module.exports = (env = []) => {
             {
               loader: require.resolve('postcss-loader'),
               options: {
-                plugins: () => [
-                  require('postcss-import'),
-                  require('postcss-flexbugs-fixes'),
-                  autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9', // React doesn't support IE8 anyway
-                    ],
-                    flexbox: 'no-2009',
-                  }),
-                ],
+                postcssOptions: {
+                  plugins: [
+                    require('postcss-import'),
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      flexbox: 'no-2009',
+                    }),
+                  ],
+                },
               },
             },
           ],
         },
         // All files with a '.ts' or '.tsx' extension will be handled/**/ by
-        // 'awesome-typescript-loader'.
         {
           test: /\.tsx?$/,
-          loader: 'awesome-typescript-loader',
+          loader: 'ts-loader',
         },
 
         // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
