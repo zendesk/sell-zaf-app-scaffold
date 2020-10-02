@@ -191,9 +191,9 @@ client.get('contact.email').then(function(data) {
 })
 ```
 
-# @zendesk/zaf-app-utils-for-sell
+# @zendesk/sell-zaf-app-toolbox
 
-@zendesk/zaf-app-utils-for-sell package delivers a bunch of useful methods, hooks and components that help you build React apps integrated with Zendesk Sell quicker and with less effort. They use Zendesk's App Framework Client under the hood. To find out more visit the [repository](https://github.com/zendesk/zaf-app-utils-for-sell).
+@zendesk/sell-zaf-app-toolbox package delivers a bunch of useful methods, hooks and components that help you build React apps integrated with Zendesk Sell quicker and with less effort. They use Zendesk's App Framework Client under the hood. To find out more visit the [repository](https://github.com/zendesk/sell-zaf-app-toolbox).
 
 ## Testing an app locally
 

@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/zendesk/sell-zaf-app-scaffold#readme",
   "dependencies": {
-    "@zendesk/zaf-app-utils-for-sell": "github:zendesk/zaf-app-utils-for-sell#v0.0.17",
+    "@zendesk/sell-zaf-app-toolbox": "github:zendesk/sell-zaf-app-toolbox#v1.0.4",
     "@zendeskgarden/css-variables": "^6.4.5",
     "@zendeskgarden/react-loaders": "^8.23.1",
     "@zendeskgarden/react-theming": "^8.23.1",
