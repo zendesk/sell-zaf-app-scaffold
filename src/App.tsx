@@ -4,7 +4,7 @@ import {
   ResponseHandler,
   useSellContactEmail,
   useFormattedDate,
-} from '@zendesk/zaf-app-utils-for-sell'
+} from '@zendesk/sell-zaf-app-toolbox'
 
 import Loader from './components/Loader'
 import EmptyStateSVG from './svg/EmptyState.svg'
