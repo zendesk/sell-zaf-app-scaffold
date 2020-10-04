@@ -17,7 +17,7 @@ const Header = ({contactEmail}: {contactEmail: string}) => (
   </div>
 )
 
-const EmptyView = () => {
+const ContentView = () => {
   return (
     <div className={css.container}>
       <EmptyStateSVG width={'40%'} />
@@ -25,7 +25,7 @@ const EmptyView = () => {
   )
 }
 
-export const App = () => {
+export const EntryView = () => {
   const contactEmailResponse = useSellContactEmail()
   const todayDate = useFormattedDate(new Date())
   useClientHeight(230)
@@ -42,7 +42,7 @@ export const App = () => {
         {([sellContact]: [string]) => (
           <>
             <Header contactEmail={sellContact} />
-            <EmptyView />
+            <ContentView />
           </>
         )}
       </ResponseHandler>
@@ -50,4 +50,4 @@ export const App = () => {
   )
 }
 
-export default App
+export default EntryView
