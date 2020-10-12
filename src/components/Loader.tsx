@@ -1,14 +1,14 @@
 import * as React from 'react'
-import {Skeleton} from '@zendeskgarden/react-loaders'
+import {Spinner} from '@zendeskgarden/react-loaders'
+import {Col} from '@zendeskgarden/react-grid'
 
 import * as css from './Loader.css'
 
 const Loader = () => {
   return (
-    <div>
-      <Skeleton className={css.Skeleton} />
-      <Skeleton className={css.Skeleton} />
-    </div>
+    <Col textAlign="center" className={css.loaderContainer}>
+      <Spinner size="32" />
+    </Col>
   )
 }
 

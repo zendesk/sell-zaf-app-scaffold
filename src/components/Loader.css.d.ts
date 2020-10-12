@@ -1,4 +1,4 @@
 declare const styles: {
-  readonly Skeleton: string
+  readonly loaderContainer: string
 }
 export = styles
