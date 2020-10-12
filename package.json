@@ -25,9 +25,11 @@
   "dependencies": {
     "@zendesk/sell-zaf-app-toolbox": "github:zendesk/sell-zaf-app-toolbox#v1.0.4",
     "@zendeskgarden/css-variables": "^6.4.5",
+    "@zendeskgarden/react-dropdowns": "8.23.1",
+    "@zendeskgarden/react-grid": "^8.24.1",
     "@zendeskgarden/react-loaders": "^8.23.1",
     "@zendeskgarden/react-theming": "^8.23.1",
-    "@zendeskgarden/react-dropdowns": "8.23.1",
+    "@zendeskgarden/svg-icons": "^6.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0"

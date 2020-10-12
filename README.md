@@ -62,6 +62,13 @@ Example HubSpot for Sell app manifest:
   "version": "2.0.3",
   "frameworkVersion": "2.0",
 
+  "parameters": [
+    {
+      "name": "access_token",
+      "type": "oauth"
+    }
+  ],
+
   "oauth": {
     "client_id": "{Client ID}",
     "client_secret": "{Client Secret}",
@@ -106,13 +113,13 @@ A recommended way to prevent this behaviour is to use `OAuth Authentication`. Th
 
 ## OAuth Authentication
 
-You can use OAuth2 to authenticate all your API requests to external service. OAuth provides a secure way for your application to access your account data without requiring that sensitive information
-like usernames and passwords be sent with the requests. To use OAuth authentication, you need to register your application with 3rd party service to generate OAuth credentials for your app.
+You can use OAuth2 to authenticate all your API requests to external service. OAuth provides a secure way for your application to access your account data without requiring sensitive information
+like usernames and passwords to be sent with the requests. To use OAuth authentication, you need to register your application with 3rd party service to generate OAuth credentials for your app.
 You also need to add some functionality to your application to implement an OAuth authorization flow.
 
 ### Registering the app with 3rd party service
 
-When creating an app, you'll be presented with a screen showing the settings for your new app including the app name, the description, and other app information that you should fill in.
+When registering an app, you'll be presented with a screen showing the settings for your new app including the app name, the description, and other app information that you should fill in.
 In addition, you'll also find the Auth settings for your app such as the client ID, client secret, redirect URL, as well as the scopes used by your app.
 You'll need these items when initiating an OAuth connection between your app and 3rd party service.
 
@@ -120,10 +127,10 @@ You'll need these items when initiating an OAuth connection between your app and
 - `Client secret` - Used to establish and refresh OAuth authentication.
 - `Redirect URL` - Users will be redirected to this location after granting access to your app.
   Use one of the following urls:
-  - https://oauth.zendesk.com/apps/oauth/redirect (on production)
-  - https://oauth.zendesk-staging.com/apps/oauth/redirect (on staging)
+  - https://zis.zendesk.com/api/services/zis/connections/oauth/callback (on production)
+  - https://zis.zendesk-staging.com/api/services/zis/connections/oauth/callback (on staging)
 - `Scope` - Optional security measure. Scope determines what data your app has permission to access.
-- `OAuth URL` - A user will need this URL to connect your app. The URL is based on your app's client credentials, redirect URL, and scopes configuration.
+- `OAuth URL` - A user will need this URL to connect your app. The URL is being constructed based on your app's client credentials, redirect URL, and scopes configuration.
 
 Use the `Client ID` and the `Client secret` in your application as described in this following section.
 
@@ -142,12 +149,31 @@ Update `client_id` and `client_secret` with yours.
 }
 ```
 
+You also need to add a parameter of type "oauth" to the parameters list:
+```json
+"parameters": [
+  {
+    "name": "access_token",
+    "type": "oauth"
+  }
+]
+```
+
+For more information visit the [docs](https://developer.zendesk.com/apps/docs/developer-guide/using_sdk#using-oauth)
+
 ### OAuth access token
 
-In your requests, specify the access token in an Authorization header as follows:
+In your app code, use the placeholder `{{setting.accesS_token}}` and a `secure: true` property to make an OAuth request.
 
-```
-Authorization: Bearer {access_token}
+```javascript
+var settings = {
+  url: 'https://www.example.com/api/user',
+  headers: {"Authorization": "Bearer {{setting.access_token}}"},
+  secure: true,
+  type: 'GET'
+};
+var client = ZAFClient.init();
+client.request(settings).then(...);
 ```
 
 ### Request Format
@@ -155,9 +181,18 @@ Authorization: Bearer {access_token}
 This is a JSON-only API. You must supply a `Content-Type: application/json` header on PUT and POST requests.
 You must set an `Accept: application/json` header on all requests.
 
+```javascript
+var settings = {
+  url: 'https://www.example.com/api/user',
+  dataType: 'json',
+  contentType: 'application/json',
+  ...
+};
+```
+
 ## Secure settings
 
-Secure settings are a other way to make settings inaccessible to agents when making AJAX requests. The setting values are only inserted in the outbound request server-side at the proxy layer.
+Secure settings are another way to make settings inaccessible to agents when making AJAX requests. The setting values are inserted only in the outbound request server-side at the proxy layer.
 See [Using secure settings](https://developer.zendesk.com/apps/docs/developer-guide/using_sdk#using-secure-settings) to set them up.
 
 # Using Zendesk Garden
@@ -172,6 +207,7 @@ Example:
 .YourElement {
   color: var(--zd-color-green-600);
   padding: var(--zd-spacing-sm);
+}
 ```
 
 For more information about the CSS classes and React components in Zendesk Garden, see [garden.zendesk.com](https://garden.zendesk.com/).
@@ -197,7 +233,7 @@ client.get('contact.email').then(function(data) {
 
 ## Testing an app locally
 
-1. Use your command-line interface to navigate to the folder containing the app you want to test.
+1. Use your command-line interface navigate to the folder containing the app you want to test.
 
 2. Install dependencies if necessary:
 
@@ -254,7 +290,7 @@ The command creates a new .zip file in `dist/tmp`. Now your app is ready to be i
 ## Installing a private app in Zendesk Sell
 
 1. Go to your Zendesk Sell settings.
-2. Find the `TOOLS` section and then select the `Apps` tab.
+2. Find the `Integrations` section and then select the `Apps` tab.
 3. Click the `Upload private app` button.
 4. Give your app a name and upload the latest .zip file from `dist/tmp` in your local app project.
 5. Install the app.
