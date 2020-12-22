@@ -2,9 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
-const {WatchIgnorePlugin} = require('webpack')
-
-module.exports = (env = []) => {
+module.exports = (env = {}) => {
   return {
     entry: './src/index.tsx',
     output: {
@@ -16,7 +14,7 @@ module.exports = (env = []) => {
     mode: 'development',
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: env.includes('development') ? 'source-map' : false,
+    devtool: env.development ? 'source-map' : false,
 
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -99,7 +97,6 @@ module.exports = (env = []) => {
         template: 'index.html',
         hash: true,
       }),
-      new WatchIgnorePlugin([/css\.d\.ts$/]),
       // Uncomment that in order to analyze bundle size
       // new BundleAnalyzerPlugin(),
     ],
