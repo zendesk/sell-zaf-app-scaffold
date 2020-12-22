@@ -53,12 +53,6 @@ module.exports = (env = []) => {
               },
             },
             {
-              loader: 'typed-css-modules-loader',
-              options: {
-                noEmit: true,
-              },
-            },
-            {
               loader: require.resolve('postcss-loader'),
               options: {
                 postcssOptions: {
