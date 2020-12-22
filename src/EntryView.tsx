@@ -11,7 +11,7 @@ import ZendeskStroke from '@zendeskgarden/svg-icons/src/16/zendesk-stroke.svg'
 import Loader from './components/Loader'
 import EmptyStateSVG from './svg/EmptyState.svg'
 
-import * as css from './App.css'
+import css from './App.css'
 
 const Header = ({contactEmail}: {contactEmail: string}) => (
   <Row justifyContent="center" className={css.header}>

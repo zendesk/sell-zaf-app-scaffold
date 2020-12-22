@@ -1,6 +1,6 @@
 {
   "name": "@zendesk/sell-zaf-app-scaffold",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React scaffold for developers to build Zendesk App Framework (ZAF) apps for Sell",
   "main": "./dist/main.js",
   "scripts": {
@@ -66,8 +66,8 @@
     "tslint-plugin-prettier": "^2.3.0",
     "tslint-react": "^5.0.0",
     "tslint-react-hooks": "^2.2.2",
-    "typed-css-modules-loader": "0.0.18",
     "typescript": "^4.0.3",
+    "typescript-plugin-css-modules": "^2.8.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
