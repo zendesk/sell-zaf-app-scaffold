@@ -2,13 +2,7 @@
 
 The package allows you to bootstrap a React-based application, that's integrated with Zendesk App Framework(ZAF), and enables you to quickly get started with developing apps for Zendesk Sell.
 
-Note: The docs are based on [Zendesk Developer Guide](https://developer.zendesk.com/apps/docs/zendesk-apps/resources). They contain only selected and hopefully the most necessary information in terms of creating an app integrated with Zendesk Sell. If you struggles with something or there's not enough information here, please visit the actual documentation.
-
-Install Zendesk App Tools to start with Zendesk App Framework:
-
-```bash
-gem install zendesk_apps_tools
-```
+Note: The docs are based on [Zendesk Developer Guide](https://developer.zendesk.com/apps/docs/zendesk-apps/resources). They contain only selected and hopefully the most necessary information in terms of creating an app integrated with Zendesk Sell. If you struggle with something or there's not enough information here, please visit the actual documentation.
 
 # File requirements
 
@@ -163,7 +157,7 @@ For more information visit the [docs](https://developer.zendesk.com/apps/docs/de
 
 ### OAuth access token
 
-In your app code, use the placeholder `{{setting.accesS_token}}` and a `secure: true` property to make an OAuth request.
+In your app code, use the placeholder `{{setting.access_token}}` and a `secure: true` property to make an OAuth request.
 
 ```javascript
 var settings = {
@@ -253,9 +247,9 @@ client.get('contact.email').then(function(data) {
    npm run server
    ```
 
-5. In a browser, navigate to the product page where you specified the app to appear (eq. deal/lead/contact card) and append `?zat=true` to the URL. Example:
+5. In a browser, navigate to the product page where you specified the app to appear (eq. deal/lead/contact card) and append `?zcli_apps=true` to the URL. Example:
 
-   https://app.futuresimple.com/crm/contacts/1234?zat=true
+   https://app.futuresimple.com/crm/contacts/1234?zcli_apps=true
 
 6. In your browser's Address bar, click the shield icon on the right (Chrome) or lock icon on the left (Firefox) and agree to load an unsafe script (Chrome) or to disable protection (Firefox).
 
@@ -300,7 +294,7 @@ The command creates a new .zip file in `dist/tmp`. Now your app is ready to be i
 If your app uses OAuth or secure settings, you can keep testing it locally after installing it remotely.
 
 1. Install the app as a private app in Zendesk Sell. See [Installing a private app in Zendesk Sell](#installing-a-private-app-in-zendesk-sell)
-2. Navigate to the app's root folder in your command-line tool and start the local ZAT server with an option named app-id:
+2. Navigate to the app's root folder in your command-line tool and start the local ZCLI server with an option named app-id:
 
    ```bash
    npm run server -- --app-id=1234
