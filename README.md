@@ -294,17 +294,20 @@ The command creates a new .zip file in `dist/tmp`. Now your app is ready to be i
 If your app uses OAuth or secure settings, you can keep testing it locally after installing it remotely.
 
 1. Install the app as a private app in Zendesk Sell. See [Installing a private app in Zendesk Sell](#installing-a-private-app-in-zendesk-sell)
-2. Navigate to the app's root folder in your command-line tool and start the local ZCLI server with an option named app-id:
+2. Navigate to the app's root folder and create a file named `zcli.apps.config.json`
+3. Paste the content below (note: you can also modify `plan` and `paramters` keys).
 
-   ```bash
-   npm run server -- --app-id=1234
-   ```
+```json
+{
+    "plan": "silver",
+    "app_id": YOUR_APP_ID,
+    "parameters": {}
+}
+```
 
-   Though named `app-id`, specify the app's installation id, not the app id. To find it, sign in to your Zendesk Sell instance as an admin and open the following page in the same browser, replacing `your_subdomain` with your own:
+   To find app installation id, sign in to your Zendesk Sell instance as an admin and open the following page in the same browser, replacing `your_subdomain` with your own:
 
    https://your_subdomain.zendesk.com/api/sell/apps/installations.json (on production)
-
-   https://your_subdomain.zendesk-staging.com/api/sell/apps/installations.json (on staging)
 
    Locate your installed app and note its `id` value, not its `app_id` value.
 
