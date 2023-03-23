@@ -30,7 +30,7 @@
     "@zendeskgarden/react-loaders": "^8.28.2",
     "@zendeskgarden/react-theming": "^8.28.2",
     "@zendeskgarden/svg-icons": "^6.27.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.7"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
