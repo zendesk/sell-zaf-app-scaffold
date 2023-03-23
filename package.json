@@ -28,7 +28,7 @@
     "@zendeskgarden/react-dropdowns": "^8.28.2",
     "@zendeskgarden/react-grid": "^8.28.2",
     "@zendeskgarden/react-loaders": "^8.28.2",
-    "@zendeskgarden/react-theming": "^8.28.2",
+    "@zendeskgarden/react-theming": "^8.63.2",
     "@zendeskgarden/svg-icons": "^6.27.0",
     "styled-components": "^5.2.1"
   },
